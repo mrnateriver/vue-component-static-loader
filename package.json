@@ -1,0 +1,41 @@
+{
+  "name": "vue-component-static-loader",
+  "version": "0.9.1",
+  "description": "A loader for Webpack that statically parses Vue class components with specified decorator and transforms them into SFC without *.vue files.",
+  "main": "dist/loader.js",
+  "scripts": {
+    "test": "ts-node -O \"{ \\\"module\\\": \\\"commonjs\\\" }\" tests/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrnateriver/vue-component-static-loader.git"
+  },
+  "keywords": [
+    "vue",
+    "typescript",
+    "class",
+    "component",
+    "decorator",
+    "sfc"
+  ],
+  "author": "Evgenii Dobrovidov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrnateriver/vue-component-static-loader/issues"
+  },
+  "homepage": "https://github.com/mrnateriver/vue-component-static-loader#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/webpack": "^4.4.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "hash-sum": "^1.0.2",
+    "querystring": "^0.2.0",
+    "ts-loader": "^4.4.1",
+    "ts-node": "^6.1.1",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2",
+    "webpack": "^4.12.0"
+  }
+}
