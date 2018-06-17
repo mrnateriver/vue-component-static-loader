@@ -168,8 +168,30 @@ export interface IArbitraryObject {
    * An internal field that's used to definitely differentiate any arbitrary object from TS AST node when parsing.
    */
   __thisIsNotAnASTNode: boolean;
+
   /**
    * Any field.
    */
   [key: string]: any;
+}
+
+/**
+ * An interface of an object that describes component's parameters necessary for HMR code generation.
+ */
+export interface IComponentHMRDescriptor {
+  /**
+   * The component's scope ID.
+   */
+  scopeId: string;
+  /**
+   * The component's template file path or null, if it doesn't have one or it couldn't have been parsed.
+   */
+  templateFilePath: string | null;
+}
+
+/**
+ * An interface of a collection of components' parameters necessary for HMR code generation.
+ */
+export interface ISourceFileComponentsHMRDescriptors {
+  [className: string]: IComponentHMRDescriptor;
 }
