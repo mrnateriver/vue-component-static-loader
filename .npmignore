@@ -1,0 +1,13 @@
+# Source folders are not needed for distribution
+src/
+tests/
+typings/
+
+# Files required for development are not needed for distribution as well
+.editorconfig
+.gitattributes
+.gitignore
+tsconfig.json
+tslint.json
+webpack.config.js
+yarn.lock
