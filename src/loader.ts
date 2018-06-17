@@ -30,6 +30,11 @@ const hash = require("hash-sum");
 export * from "./types";
 
 /**
+ * Re-export decorator function.
+ */
+export { default as Component } from "./runtime/decorator";
+
+/**
  * The main entry point for the loader.
  * Receives options and source file contents from Webpack processing pipeline.
  */

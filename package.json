@@ -27,9 +27,12 @@
     "url": "https://github.com/mrnateriver/vue-component-static-loader/issues"
   },
   "homepage": "https://github.com/mrnateriver/vue-component-static-loader#readme",
-  "dependencies": {},
+  "dependencies": {
+    "vue-class-component": "https://github.com/mrnateriver/vue-class-component.git"
+  },
   "devDependencies": {
     "@types/qs": "^6.5.1",
+    "@types/vue": "^2.0.0",
     "@types/webpack": "^4.4.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
