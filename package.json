@@ -30,6 +30,7 @@
     "@types/webpack": "^4.4.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "hash-sum": "^1.0.2",
     "querystring": "^0.2.0",
