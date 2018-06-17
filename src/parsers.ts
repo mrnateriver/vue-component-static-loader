@@ -214,7 +214,7 @@ export function parseRequiredFilename(file: string): IParsedQueriedFilename {
  * @returns {string | undefined}
  */
 export function extractExtension(filePath: string): string | undefined {
-  const result = path.extname(filePath).replace(".", "");
+  const result = path.extname(parseRequiredFilename(filePath).file).replace(".", "");
   if (result) {
     return result;
   } else {
