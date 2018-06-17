@@ -1,0 +1,10 @@
+# System and temporary files
+.vscode/
+.idea/
+.vagrant/
+.DS_Store
+.env
+yarn-error.log
+
+# Installable dependencies
+node_modules/
