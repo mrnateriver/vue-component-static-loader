@@ -1,5 +1,5 @@
-import * as ts from "typescript";
 import webpack from "webpack";
+import * as ts from "typescript";
 
 /**
  * A shorter alias for Webpack context typing.
@@ -133,7 +133,7 @@ export interface IDecoratorParametersTransformationResult {
 }
 
 /**
- * An instance of an object that represents parsed file URL.
+ * An interface of an object that represents parsed file URL.
  */
 export interface IParsedQueriedFilename {
   /**
