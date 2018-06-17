@@ -25,6 +25,11 @@ import * as ts from "typescript";
 const hash = require("hash-sum");
 
 /**
+ * Exports for using this loader from TypeScript.
+ */
+export * from "./types";
+
+/**
  * The main entry point for the loader.
  * Receives options and source file contents from Webpack processing pipeline.
  */
