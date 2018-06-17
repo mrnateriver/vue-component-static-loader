@@ -26,6 +26,7 @@
   "homepage": "https://github.com/mrnateriver/vue-component-static-loader#readme",
   "dependencies": {},
   "devDependencies": {
+    "@types/qs": "^6.5.1",
     "@types/webpack": "^4.4.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
