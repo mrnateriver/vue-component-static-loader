@@ -7,7 +7,7 @@
   "types": "dist/types/loader.d.ts",
   "scripts": {
     "build": "webpack && tsc -d --declarationDir dist/types",
-    "test": "ts-node -O \"{ \\\"module\\\": \\\"commonjs\\\" }\" tests/index.ts"
+    "test": "ts-node -O \"{ \\\"module\\\": \\\"commonjs\\\" }\" --pretty tests/index.ts"
   },
   "repository": {
     "type": "git",
@@ -36,7 +36,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "hash-sum": "^1.0.2",
-    "querystring": "^0.2.0",
+    "qs": "^6.5.2",
     "ts-loader": "^4.4.1",
     "ts-node": "^6.1.1",
     "tslint": "^5.10.0",
