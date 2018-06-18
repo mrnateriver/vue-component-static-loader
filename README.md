@@ -14,13 +14,13 @@
 Tested with listed versions, but may work with older ones as well. But probably will not.
 
 #### Installation:
-```
-npm i vue-component-static-loader -D
+```bash
+npm install --save-dev vue-component-static-loader
 ```
 
 Or if you're using [Yarn](https://yarnpkg.com):
 
-```
+```bash
 yarn add vue-component-static-loader --dev
 ```
 
@@ -103,6 +103,7 @@ export class HelloScopedComponent extends Vue {
 
 ### Configuration
 The loader accepts several configuration options:
+
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
 |**`production`**|`{Boolean}`|`false`| Whether the bundle is being built for production. Affects component scope ID generation and whether to include [HMR](https://webpack.js.org/concepts/hot-module-replacement/) code.|
@@ -122,10 +123,20 @@ import { Component } from "vue-component-static-loader";
 
 @Component({
   _compiled: true,
-  ...require("./test.pug?vue&type=template&lang=pug"), // If Webpack is configured correctly this will import 'render' and 'staticRenderFns' functions into component options, which is what vue-loader does
-  styles: require("test1.css?vue&type=style&lang=css&index=0"), // If bundle is targeted for Node.js (SSR) then this will import '__inject__' function which will be used by decorator runtime; otherwise the styles will be inserted into document <head> immediately if vue-style-loader/style-loader is configured
-  __file: "inputFile.ts", // This will be the source file name
-  // _moduleId: "%HASH%-0" // And if bundle is targeted for Node.js (SSR) then module ID will also be inserted for Vue SSR
+   /* If Webpack is configured correctly this will import 'render' and
+      'staticRenderFns' functions into component options, which is what
+      vue-loader does. */
+  ...require("./test.pug?vue&type=template&lang=pug"),
+  /* If bundle is targeted for Node.js (SSR) then this will import
+     '__inject__' function which will be used by decorator runtime;
+     otherwise the styles will be inserted into document <head>
+     immediately if vue-style-loader/style-loader is configured. */
+  styles: require("test1.css?vue&type=style&lang=css&index=0"),
+  /* This will be the source file name.*/
+  __file: "inputFile.ts",
+  /* And if bundle is targeted for Node.js (SSR) then module ID will
+     also be inserted for Vue SSR. */
+  // _moduleId: "%HASH%-0"
 })
 export class HelloComponent extends Vue {
 }
