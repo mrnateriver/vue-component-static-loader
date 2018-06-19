@@ -1,3 +1,11 @@
+# System and temporary files
+.vscode/
+.idea/
+.vagrant/
+.DS_Store
+.env
+yarn-error.log
+
 # Source folders are not needed for distribution
 src/
 tests/
