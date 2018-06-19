@@ -4,7 +4,7 @@
   "description": "A loader for Webpack that statically parses Vue class components with specified decorator and transforms them into SFC without *.vue files.",
   "main": "dist/commonjs/loader.js",
   "module": "dist/esm/runtime/decorator.js",
-  "types": "dist/types/loader.d.ts",
+  "types": "dist/types/runtime/decorator.d.ts",
   "scripts": {
     "build": "webpack && tsc -d --declarationDir dist/types",
     "test": "ts-node -O \"{ \\\"module\\\": \\\"commonjs\\\" }\" --pretty tests/index.ts"
