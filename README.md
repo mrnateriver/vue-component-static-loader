@@ -222,6 +222,8 @@ And then there's one inevitable consequence of getting rid of component pitching
 
 With this loader, there's no intermediate module, component constructor function is exported directly from it's module. And as a result, if you change the component that's imported into, let's say, some helper or service module, which doesn't have HMR code for reloading itself, the whole chain of imports will be invalidated, and if any of the modules in it don't have self-reloading code the whole page will have to be reloaded.
 
+Most of this issues, if not all, can be fixed, so any PRs or just suggestions are more than welcome.
+
 ### License
 
 [MIT](http://opensource.org/licenses/MIT)
