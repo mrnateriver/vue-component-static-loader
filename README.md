@@ -105,9 +105,11 @@ As for `styles` option, you can initialize it in several ways:
 
 Any unrecognized expressions are left as-is without any parsing or transformations.
 
+**Also make sure to use decorator from this package, and not vue-class-component**, because not only it declares necessary types for its parameters, but it also makes necessary runtime operations.
+
 ```TypeScript
 import Vue from "vue";
-import { Component } from "vue-component-static-loader";
+import Component from "vue-component-static-loader";
 
 @Component({
   template: require("./HelloComponent.pug"),
@@ -152,7 +154,7 @@ The loader parses ASTs of input files using [TypeScript Compiler API](https://gi
 Aforementioned sample components will be transformed into the following code (excluding HMR and without the comments, ofcourse):
 ```TypeScript
 import Vue from "vue";
-import { Component } from "vue-component-static-loader";
+import Component from "vue-component-static-loader";
 
 @Component({
   _compiled: true,
