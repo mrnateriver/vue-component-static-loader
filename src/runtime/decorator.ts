@@ -1,5 +1,5 @@
 import Vue, { ComponentOptions } from "vue";
-import { componentFactory, VueClass } from "vue-class-component";
+import BaseComponentDecorator, { componentFactory, VueClass } from "vue-class-component";
 
 /**
  * A declaration of the Vue SSR context that's available during SSR execution.
@@ -50,6 +50,9 @@ export type ComponentDecoratorOptions<V extends Vue> = ComponentOptions<V> & {
  *
  * This is a declaration of decorator signature in factory mode. This signature is used when decorator is applied as a call
  * expression.
+ *
+ * @param {ComponentDecoratorOptions<V>} options
+ * @returns {(target: VC) => VC}
  */
 function Component<V extends Vue>(options: ComponentDecoratorOptions<V>): <VC extends VueClass<V>>(target: VC) => VC;
 /**
@@ -58,12 +61,18 @@ function Component<V extends Vue>(options: ComponentDecoratorOptions<V>): <VC ex
  *
  * This is a declaration of decorator signature in statement mode. This signature is used when decorator is applied without
  * parenthesis.
+ *
+ * @param {VC} target
+ * @returns {VC}
  */
 function Component<VC extends VueClass<Vue>>(target: VC): VC;
 
 /**
  * Vue component decorator.
  * A class with this decorator will be transformed into extended Vue constructor function at runtime.
+ *
+ * @param {any} options
+ * @returns {any}
  */
 function Component(options: any): any {
   // If decorator is applied without any parameters, simply pass it down to default implementation
@@ -159,5 +168,21 @@ function Component(options: any): any {
     return componentFactory(componentClass, options) as VC;
   };
 }
+
+/**
+ * A declared extension of the decorator function for registering Vue hooks.
+ * This declaration is needed for TypeScript type checking to allow assigning properties to function object.
+ */
+declare namespace Component {
+  /**
+   * Registers specified method names as Vue component hooks.
+   * Such hooks will not be injected into `methods` collection, but rather will be left declared
+   * in component's options.
+   *
+   * @param {string[]} keys
+   */
+  function registerHooks(keys: string[]): void;
+}
+Component.registerHooks = BaseComponentDecorator.registerHooks;
 
 export default Component;
