@@ -28,6 +28,8 @@
   },
   "homepage": "https://github.com/mrnateriver/vue-component-static-loader#readme",
   "dependencies": {
+    "hash-sum": "^1.0.2",
+    "qs": "^6.5.2",
     "vue-class-component": "https://github.com/mrnateriver/vue-class-component.git"
   },
   "devDependencies": {
@@ -38,8 +40,6 @@
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "hash-sum": "^1.0.2",
-    "qs": "^6.5.2",
     "ts-loader": "^4.4.1",
     "ts-node": "^6.1.1",
     "tslint": "^5.10.0",
