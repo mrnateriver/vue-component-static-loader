@@ -5,7 +5,7 @@ function resolve (dir) {
 }
 
 module.exports = {
-  mode: process.env.NODE_ENV === "production" ? "production" : "development",
+  mode: "production",
   target: "node",
 
   entry: "./src/loader.ts",
@@ -16,8 +16,7 @@ module.exports = {
     libraryTarget: "commonjs2"
   },
 
-  // source maps won't hurt, so generate them anyway
-  devtool: "source-map",
+  devtool: false,
 
   // don't minimize output in any mode since this package is intended for use in Node.js and it will ease debug
   optimization: {
@@ -37,9 +36,7 @@ module.exports = {
           resolve("test")
         ],
         use: [
-          /**
-           * Rely on Babel for transpiling JS emitted from TSC, since it's *believed* that it does a better job than TSC
-           */
+          // Rely on Babel for transpiling JS emitted from TSC, since it's *believed* that it does a better job than TSC
           {
             loader: "babel-loader",
             options: {
