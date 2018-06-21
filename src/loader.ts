@@ -86,7 +86,9 @@ export default function (this: LoaderContext, content: string) {
   );
 
   if (needsHotReload) {
-    const hotReloadAPIPath: string = JSON.stringify(require.resolve("vue-hot-reload-api"));
+    // tslint:disable-next-line:no-eval
+    const webpackPleaseMissThis = eval(`require.resolve.bind(require)`);
+    const hotReloadAPIPath: string = JSON.stringify(webpackPleaseMissThis("vue-hot-reload-api"));
 
     content += `\n
 /* hot reload */
