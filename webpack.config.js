@@ -18,9 +18,11 @@ module.exports = {
 
   devtool: false,
 
-  // don't minimize output in any mode since this package is intended for use in Node.js and it will ease debug
   optimization: {
-    minimize: false
+    // don't minimize output in any mode since this package is intended for use in Node.js and it will ease debug
+    minimize: false,
+    // don't replace NODE_ENV variable at compile time
+    nodeEnv: false,
   },
 
   // TypeScript configuration
