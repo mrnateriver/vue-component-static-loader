@@ -3648,9 +3648,9 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-"vue-class-component@https://github.com/mrnateriver/vue-class-component.git#4333af1231c190d29e6118aa7fa6c20b7d52ad4d":
+"vue-class-component@https://github.com/mrnateriver/vue-class-component.git#9e0684721612290c6c296fc7140055a6ed55e22a":
   version "6.2.0"
-  resolved "https://github.com/mrnateriver/vue-class-component.git#4333af1231c190d29e6118aa7fa6c20b7d52ad4d"
+  resolved "https://github.com/mrnateriver/vue-class-component.git#9e0684721612290c6c296fc7140055a6ed55e22a"
 
 vue@*:
   version "2.5.16"
