@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "dist/esm",
+    "outDir": "dist/esm/runtime",
     "charset": "utf-8",
     "importHelpers": true,
     "experimentalDecorators": true,
@@ -13,17 +13,16 @@
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
     "pretty": true,
-    "target": "esnext",
+    "target": "es5",
+    "lib": ["es2015", "dom"],
     "module": "es2015",
     "moduleResolution": "node",
     "sourceMap": false
   },
   "include": [
-    "src/**/*.ts",
-    "typings/*.d.ts"
+    "src/runtime/decorator.ts"
   ],
   "exclude": [
-    "node_modules",
-    "src/runtime/decorator.ts"
+    "node_modules"
   ]
 }

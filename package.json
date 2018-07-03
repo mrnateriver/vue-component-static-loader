@@ -6,7 +6,7 @@
   "module": "dist/esm/runtime/decorator.js",
   "types": "dist/types/runtime/decorator.d.ts",
   "scripts": {
-    "build": "webpack && tsc -d --declarationDir dist/types",
+    "build": "webpack && tsc -d --declarationDir dist/types && tsc -p decorator.tsconfig.json -t ES5 -d --declarationDir dist/types/runtime",
     "test": "ts-node -O \"{ \\\"module\\\": \\\"commonjs\\\" }\" --pretty tests/index.ts"
   },
   "repository": {
