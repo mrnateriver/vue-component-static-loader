@@ -30,7 +30,7 @@
   "dependencies": {
     "hash-sum": "^1.0.2",
     "qs": "^6.5.2",
-    "vue-class-component": "https://github.com/mrnateriver/vue-class-component.git#9e0684721612290c6c296fc7140055a6ed55e22a"
+    "vue-class-component": "https://github.com/mrnateriver/vue-class-component.git#47c63383217d5d6d1d68dc67fd44da5174b6e68b"
   },
   "devDependencies": {
     "@types/qs": "^6.5.1",

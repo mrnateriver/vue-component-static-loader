@@ -16,6 +16,7 @@ typings/
 .gitattributes
 .gitignore
 tsconfig.json
+decorator.tsconfig.json
 tslint.json
 webpack.config.js
 yarn.lock
