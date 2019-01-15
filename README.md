@@ -41,11 +41,18 @@ yarn add vue-component-static-loader --dev
 
 Then add it to your Webpack configuration as a loader for TypeScript files (usually matched by `\.tsx?$`) before the compiler itself but **after any linters**, since it doesn't preserve whitespace and may generate code that doesn't match your linting rules.
 
+Also, since Webpack expects that specified loader is just an NPM/Yarn package that has a single default export, and this package exports the decorator as a package "entry", you should also specify loader resolving alias, as in the following example configuration.
+
 ### Example
 
 #### Webpack sample configuration
 ```javascript
 module.exports = {
+    resolveLoader: {
+      alias: {
+        "vue-component-static-loader": require.resolve("vue-component-static-loader/dist/commonjs/loader.js")
+      }
+    },
     module: {
       rules: [
         {
@@ -151,7 +158,7 @@ The loader accepts several configuration options:
 
 The loader parses ASTs of input files using [TypeScript Compiler API](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API), searches for exported classes with specified decorator (its identifier can be changed with `decoratorName` loader option) and then transforms initialization expressions of certain parameters in its options so that when further compiled the component will have everything it needs in its options.
 
-Aforementioned sample components will be transformed into the following code (excluding HMR and without the comments, ofcourse):
+Aforementioned sample components will be transformed into the following code (excluding HMR and without the comments, of course):
 ```TypeScript
 import Vue from "vue";
 import Component from "vue-component-static-loader";

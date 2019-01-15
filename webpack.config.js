@@ -4,17 +4,18 @@ function resolve (dir) {
   return path.join(__dirname, dir);
 }
 
-module.exports = {
+const outputConfig = {
+  path: path.resolve(__dirname, "dist/commonjs"),
+  filename: "loader.js",
+  libraryTarget: "commonjs2"
+};
+
+const baseConfig = {
   mode: "production",
   target: "node",
 
   entry: "./src/loader.ts",
-
-  output: {
-    path: path.resolve(__dirname, "dist/commonjs"),
-    filename: "loader.js",
-    libraryTarget: "commonjs2"
-  },
+  output: outputConfig,
 
   devtool: false,
 
@@ -63,3 +64,11 @@ module.exports = {
   // externalize everything
   externals: [/^\w.*$/i]
 };
+
+module.exports = [
+  baseConfig,
+  Object.assign({}, baseConfig, {
+    entry: "./src/runtime/decorator.ts",
+    output: Object.assign({}, outputConfig, { filename: "decorator.js" }),
+  }),
+];

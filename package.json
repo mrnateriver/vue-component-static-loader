@@ -2,7 +2,7 @@
   "name": "vue-component-static-loader",
   "version": "0.9.11",
   "description": "A loader for Webpack that statically parses Vue class components with specified decorator and transforms them into SFC without *.vue files.",
-  "main": "dist/commonjs/loader.js",
+  "main": "dist/commonjs/decorator.js",
   "module": "dist/esm/runtime/decorator.js",
   "types": "dist/types/runtime/decorator.d.ts",
   "scripts": {
